@@ -1,0 +1,76 @@
+.modal-container {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  /* background-color: rgba(0, 0, 0, .16); */
+  background-color: hsla(0,0%,90%,.9);
+  display: flex;
+  flex-flow: column;
+  justify-content: flex-start;
+  align-items: center;
+
+  overflow: auto;
+  z-index: 20;
+}
+
+.modal-container > .modal {
+  position: relative;
+
+  background-color: #fff;
+  padding: 32px;
+  border-radius: 5px;
+
+  margin: 10% auto;
+  /* margin-top: 10%;
+  margin-bottom: 16px; */
+  width: 85%;
+  max-width: 800px;
+
+  box-shadow: 0 0 56px 16px rgba(0, 0, 0, .08),
+              0px 8px 16px -8px rgba(0, 0, 0, .16);
+}
+
+.modal--loading {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 5px;
+  background-color: rgba(255, 255, 255, .72);
+  z-index: 1;
+
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  justify-content: center;
+
+  color: #1574ff;
+}
+
+.modal--loading > .ball-clip-rotate-multiple > div {
+  border: 2px solid #1574ff;
+}
+
+.modal--loading > .ball-clip-rotate-multiple > div:last-child {
+  border-color: #1574ff transparent #1574ff transparent;
+}
+
+.modal--loading > span {
+  margin-top: 24px;
+}
+
+.modal > .modal--header {
+  margin: -32px -32px 32px;
+  color: white;
+  border-top-right-radius: 5px;
+  border-top-left-radius: 5px;
+  padding: 32px;
+
+  background-color: #3774ff;
+  border-bottom: solid 1px #f2f4f5;
+  font-size: 1.5rem;
+  margin-bottom: 32px;
+}

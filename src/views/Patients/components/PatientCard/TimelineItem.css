@@ -1,0 +1,44 @@
+.timeline-item {
+  display: flex;
+  align-items: flex-start;
+
+  position: relative;
+  border-left: solid 3px #ececec;
+
+  padding-left: 32px;
+
+  padding-bottom: 16px;
+}
+
+.timeline-item > .date {
+  flex: 0 1 64px;
+}
+
+.timeline-item > .icon {
+  flex: 0 1 18px;
+  color: #a0b2b9;
+}
+
+.timeline-item > .data {
+  flex: 1;
+}
+
+.timeline-item > .data > .title,
+.timeline-item > .data > .time {
+  color: #a0b2b9;
+  font-size: 0.8rem;
+  font-weight: 700;
+  line-height: 21px;
+  align-items: center;
+}
+
+.timeline-item > .bullet {
+  position: absolute;
+  left: -9px;
+  top: 0;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  border: solid 2px rgb(21, 116, 255);
+  background-color: #fff;
+}

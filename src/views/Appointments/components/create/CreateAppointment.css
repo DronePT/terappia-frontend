@@ -1,0 +1,108 @@
+.stepper {
+  display: flex;
+  flex-flow: row nowrap;
+
+  padding: 0 0 32px;
+  margin: 0 0 32px;
+
+  border-bottom: solid 1px hsla(222, 20%, 61%, .16);
+}
+
+.stepper > .step-container {
+  position: relative;
+  flex: 1;
+  display: flex;
+  align-items: center;
+  height: 33px;
+
+  user-select: none;
+}
+
+.step-container > .step-icon {
+  position: absolute;
+  background-color: #fff;
+  border: solid 2px hsl(222, 20%, 61%);
+  color: hsl(222, 20%, 61%);
+
+  width: 33px;
+  height: 33px;
+  border-radius: 50%;
+  font-weight: 700;
+  font-size: 1.1rem;
+
+  flex: 0 1 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  /* box-shadow: 0 0 16px -4px rgba(0, 0, 0, .54); */
+}
+
+.step-container > .step-icon > i {
+  color: #fff;
+  font-size: 18px;
+}
+
+.step-container > .step-label {
+  position: absolute;
+  background-color: hsl(222, 20%, 61%);
+  left: 8px;
+  padding: 0 12px 0 29px;
+  border-radius: 10px;
+  height: 21px;
+  color: white;
+  font-size: .8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+}
+
+.step-container > .step-line {
+  flex: 1;
+  width: 100%;
+  height: 2px;
+  background-color: hsl(222, 20%, 61%);
+  margin-right: 8px;
+}
+
+/* state is done */
+.step-container.is-done > .step-icon {
+  background-color: #fff;
+  border: solid 2px hsl(120, 50%, 50%);
+}
+
+.step-container.is-done > .step-icon > i {
+  color: hsl(120, 50%, 50%);
+}
+
+.step-container.is-done > .step-line,
+.step-container.is-done > .step-label {
+  background-color: hsl(120, 50%, 50%);
+}
+
+/* state is active */
+.step-container.is-active > .step-icon {
+  background-color: #fff;
+  border: solid 2px hsl(222, 100%, 61%);
+  color: hsl(222, 100%, 61%);
+}
+
+.step-container.is-active > .step-icon > i {
+  color: hsl(222, 100%, 61%);
+}
+
+.step-container.is-active > .step-line,
+.step-container.is-active > .step-label {
+  background-color: hsl(222, 100%, 61%);
+}
+
+.create-appointment--footer {
+  background-color: rgba(171, 188, 193, 0.16);
+  margin: 16px -32px -32px;
+  padding: 16px 32px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}

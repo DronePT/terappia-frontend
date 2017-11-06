@@ -1,0 +1,28 @@
+.tooltip-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.tooltip-container:hover > .tooltip {
+  display: block;
+}
+
+.tooltip-container > .tooltip {
+  display: none;
+  position: absolute;
+  background-color: rgba(0, 0, 0, .74);
+  color: #fff;
+  z-index: 1;
+  border-radius: 5px;
+  font-size: 0.90rem;
+  font-weight: 700;
+  line-height: 15px;
+  text-align: center;
+  padding: 8px;
+  white-space: nowrap;
+
+  left: 50%;
+  top: 0;
+  transform: translate3d(-50%, calc(-100% - 8px), 0);
+}

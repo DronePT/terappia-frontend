@@ -1,0 +1,126 @@
+.patient-card {
+  position: relative;
+  padding-top: 78px;
+  margin-bottom: 16px;
+}
+
+.patient-card--header {
+  position: absolute;
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 78px;
+  padding: 0 16px;
+  border-radius: 5px;
+
+  background-color: #f7f9fa;
+  box-shadow: 0 0 32px -16px rgba(0, 0, 0, .16),
+              0 4px 8px -4px rgba(0, 0, 0, .16);
+}
+
+.patient-card--header > .top {
+  display: flex;
+}
+
+.patient-card--header > .top > .avatar > div {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background-color: #efefef;
+
+  /* background-image: url('https://scontent.flis8-2.fna.fbcdn.net/v/t1.0-9/21751511_1573241142696394_6327986483174078402_n.jpg?oh=cb4810499d25fed565a5e30ea67ebdfc&oe=5A713BEA'); */
+  background-position: center;
+  background-size: cover;
+}
+
+.patient-card--header > .top > .data {
+  flex: 1;
+  margin: 0 16px;
+}
+
+.patient-card--header > .top > .data > .name {
+  font-size: 1.2rem;
+}
+
+.patient-card--header > .top > .data > .date {
+  font-size: 1rem;
+  color: #abbcc2;
+}
+
+.patient-card--header > .top > .status > div {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-size: 24px;
+}
+
+.bg-green  { background-color: #28c96d; }
+.bg-red { background-color:  #f9334b; }
+
+.patient-card--footer > .badges {
+  display: flex;
+  justify-content: space-around;
+}
+
+.patient-card--footer > .badges > .badge-separator {
+  background-color: rgba(171, 188, 194, 0.32);
+  width: 1px;
+  flex: 0 1 1px;
+}
+
+.patient-card--footer > .badges > .badge {
+  background-color: #fff;
+  padding: 0 16px;
+  height: 48px;
+
+  display: flex;
+  flex-flow: column;
+  flex: 1;
+
+  align-items: center;
+  justify-content: center;
+
+  font-size: 1rem;
+}
+
+.patient-card--footer > .badges > .badge > div:first-child {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.patient-card--footer > .badges > .badge > div.label {
+  color: #abbcc2;
+  font-weight: 700;
+  font-size: .75rem;
+  line-height: .75rem;
+  margin-top: 4px;
+  text-align: center;
+}
+
+.patient-card--footer > .badges > .badge i {
+  margin-right: 8px;
+  font-size: 18px;
+}
+
+.patient-card--body {
+  background-color: #fff;
+  margin: 0 5px;
+}
+
+.patient-card--footer {
+  background-color: #fff;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  margin: 0 5px;
+  border-top: solid 1px rgba(171, 188, 194, 0.32);
+  padding: 8px 0;
+}

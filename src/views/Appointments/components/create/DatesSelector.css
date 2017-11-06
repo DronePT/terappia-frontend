@@ -1,0 +1,26 @@
+.month-calendar-container {
+  display: flex;
+  flex-flow: row nowrap;
+}
+
+.month-selected-dates {
+  flex: 1;
+  margin: 0 0 0 16px;
+}
+
+@media only screen and (max-width: 48em) {
+  .month-calendar-container {
+    flex-flow: column nowrap;
+    align-items: center;
+  }
+
+  .month-calendar-container > .month-calendar {
+    flex: 0 1;
+    width: 296px;
+  }
+
+  .month-selected-dates {
+    width: 100%;
+    margin: 16px 0 0;
+  }
+}

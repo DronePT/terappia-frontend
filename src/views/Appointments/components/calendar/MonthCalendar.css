@@ -1,0 +1,107 @@
+/* MonthCalendar.css */
+.month-calendar {
+  flex: 0 1 296px;
+  border: solid 1px hsla(222, 20%, 61%, .16);
+  border-radius: 5px;
+
+  align-self: flex-start;
+  user-select: none;
+}
+
+.month-calendar > .month-name {
+  height: 32px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.month-calendar > .month-name > .arrows {
+  flex: 0 1 42px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 5px;
+}
+
+.month-calendar > .month-name > .arrows:hover {
+  background-color: hsla(222, 20%, 61%, .1);
+  height: 100%;
+}
+
+.month-calendar > .month-name > .arrows:hover > i {
+  color: hsla(222, 90%, 61%, 1);
+}
+
+.month-calendar > .month-name > .label {
+  flex: 1;
+  text-transform: capitalize;
+  font-size: 1.1rem;
+  font-weight: 700;
+  text-align: center;
+}
+
+.month-calendar > .header {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  height: 42px;
+
+  width: 100%;
+
+  border-bottom: solid 2px hsla(222, 20%, 61%, .16);
+  color: hsla(222, 20%, 61%, 1);
+}
+
+.month-calendar > .header > div {
+  flex: 0 1 42px;
+  text-align: center;
+  font-weight: 700;
+}
+
+.month-calendar > .body {
+  display: flex;
+  flex-flow: column nowrap;
+}
+
+.month-calendar > .body > .week {
+  display: flex;
+  align-items: center;
+  height: 42px;
+
+  border-bottom: solid 1px hsla(222, 20%, 61%, .16);
+}
+
+.month-calendar > .body > .week > .day {
+  flex: 0 1 42px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.month-calendar > .body > .week > .day > span {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+
+  transition: background-color .3s ease;
+  will-change: background-color;
+}
+/* state over */
+.month-calendar > .body > .week > .day:hover > span {
+  background-color: hsla(222, 20%, 61%, .1);
+  color: hsla(222, 90%, 61%, 1);
+  font-weight: 700;
+}
+
+/* state selected */
+.month-calendar > .body > .week > .day.is-selected > span {
+  background-color: hsla(222, 90%, 61%, 1);
+  color: #fff;
+  box-shadow: 0 0 12px -4px rgba(0, 0, 0, 1);
+}

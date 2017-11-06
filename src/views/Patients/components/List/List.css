@@ -1,0 +1,36 @@
+.patients-list {
+  /* display: flex; */
+  /* justify-content: space-around; */
+}
+
+.patients-list > .patients-list-pagination {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px;
+}
+
+.patients-list > .patients-list-pagination > span {
+  color: #abbcc2;
+  font-size: .85rem;
+  text-transform: uppercase;
+}
+
+.patients-list > .patients-list-pagination > a {
+  text-decoration: none;
+  color: #343f44;
+  display: flex;
+  align-items: center;
+}
+
+.patients-list > .patients-list-pagination > a:not(.is-inactive):hover {
+  color: #1574ff;
+}
+
+.patients-list > .patients-list-pagination > a.is-inactive {
+  opacity: .2;
+}
+
+.patients-list > .patients-list-pagination > a > span {
+  margin: 0 8px;
+}

@@ -1,0 +1,98 @@
+.calendar {
+  background-color: #fff;
+  border-radius: 5px;
+  min-height: 500px;
+
+  display: flex;
+  flex-flow: column nowrap;
+
+  position: relative;
+
+  padding: 0 48px;
+}
+
+.calendar > .calendar-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 1 50px;
+
+  font-size: 1.5rem;
+  text-transform: capitalize;
+
+  border-bottom: solid 1px #f2f4f5;
+}
+
+.calendar.week-mode > .calendar-body {
+  position: relative;
+  flex: 1;
+  display: flex;
+
+  flex-flow: row nowrap;
+
+  overflow: auto;
+}
+
+
+.week-mode > .change-week {
+  position: absolute;
+  width: 48px;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+}
+
+.week-mode > .change-week:first-child {
+  border-right: solid 1px #f2f4f5;
+  left: 0;
+}
+
+.week-mode > .change-week:last-child {
+  border-left: solid 1px #f2f4f5;
+  right: 0;
+}
+
+.week-mode > .change-week > i {
+  font-size: 18px;
+  color: rgba(171, 188, 193, 1);
+}
+
+.week-mode > .change-week:hover {
+  background-color: rgba(171, 188, 193, .04);
+}
+
+.week-mode > .change-week:hover > i {
+  color: #3774ff;
+}
+
+.calendar-body--loading {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 5px;
+  background-color: rgba(255, 255, 255, .72);
+  z-index: 1;
+
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  justify-content: center;
+
+  color: #1574ff;
+}
+
+.calendar-body--loading > .ball-clip-rotate-multiple > div {
+  border: 2px solid #1574ff;
+}
+
+.calendar-body--loading > .ball-clip-rotate-multiple > div:last-child {
+  border-color: #1574ff transparent #1574ff transparent;
+}
+
+.calendar-body--loading > span {
+  margin-top: 24px;
+}

@@ -1,0 +1,12 @@
+.app {
+  height: 100%;
+  padding-left: 115px;
+  transition: padding .25s ease;
+  will-change: padding
+}
+
+.app-content {
+  padding: 16px;
+  height: 100%;
+  overflow: auto;
+}

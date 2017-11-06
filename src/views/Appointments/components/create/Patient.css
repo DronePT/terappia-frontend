@@ -1,0 +1,43 @@
+.patient {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  height: 56px;
+  padding: 0 16px;
+  border-bottom: solid 1px hsla(222, 20%, 61%, .16);
+
+  text-decoration: none;
+}
+
+.patient.is-selected,
+.patient:hover {
+  background-color: hsla(222, 20%, 61%, .10);
+}
+
+.patient > .avatar-container {
+  flex: 0 1;
+  margin-right: 16px;
+}
+
+.patient > .avatar-container > .avatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background-size: cover;
+  background-position: center;
+  background-color:hsla(222, 20%, 61%, .16);
+  box-shadow: 0 0 16px -4px rgba(0, 0, 0, .54);
+}
+
+.patient > .name {
+  flex: 1;
+  font-size: 1.1rem;
+}
+
+.patient > .name > .company {
+  padding: 2px 4px;
+  font-size: .75rem;
+  font-weight: 700;
+  border-radius: 5px;
+  margin-left: 8px;
+}
