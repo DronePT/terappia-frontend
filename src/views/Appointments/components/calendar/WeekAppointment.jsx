@@ -1,15 +1,18 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
+
 import './WeekAppointment.css'
 
 import { hexToRgb } from './../../../../helpers/colors'
 
-const WeekAppointment = ({ datetime, label, isDanger, color }) => {
+const WeekAppointment = ({ to, datetime, label, isDanger, color }) => {
   const backgroundColor = hexToRgb(color, '.1')
   // const color = hexToRgb(color)
 
   return (
     <div className="week-appointment-container">
-      <div
+      <Link
+        to={to}
         className="week-appointment"
         style={{backgroundColor, color, borderLeftColor: color}}>
         <div className="header">
@@ -25,7 +28,7 @@ const WeekAppointment = ({ datetime, label, isDanger, color }) => {
           ):null}
         </div>
         <span className="label">{label}</span>
-      </div>
+      </Link>
     </div>
   )
 }

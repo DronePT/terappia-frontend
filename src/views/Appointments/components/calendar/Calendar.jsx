@@ -56,6 +56,7 @@ class Calendar extends React.Component {
         <WeekDay key={wd} day={wday} appointments={dayAppointments}>
           {dayAppointments.map((a, i) => (
             <WeekAppointment
+              to={`/appointments/${a._id}`}
               key={i}
               datetime={moment(a.date).format('HH:mm')}
               isDanger={a.status === 'notpaid'}
