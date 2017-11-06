@@ -29,6 +29,12 @@ const Step = ({ step, icon, children, active, done }) => {
 }
 
 class CreateAppointment extends Component {
+  constructor () {
+    super()
+
+    this.bindKeyboard = this.bindKeyboard.bind(this)
+  }
+
   state = {
     isLoading: false,
     isCreated: false,
@@ -49,6 +55,19 @@ class CreateAppointment extends Component {
 
   componentWillMount () {
     this.fetchPatients()
+  }
+
+  componentDidMount () {
+    window.addEventListener('keyup', this.bindKeyboard)
+  }
+
+  componentWillUnmount () {
+    window.removeEventListener('keyup', this.bindKeyboard)
+  }
+
+  bindKeyboard (event) {
+    const key = event.keyCode || event.which
+    if (key === 27) this.setState({ isCreated: true })
   }
 
   handleClose () {

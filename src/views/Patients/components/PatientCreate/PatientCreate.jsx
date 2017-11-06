@@ -19,7 +19,9 @@ class PatientCreate extends Component {
     this.handleCreateClick = this.handleCreateClick.bind(this)
     this.create = this.create.bind(this)
     this.triggerCreated = this.triggerCreated.bind(this)
+    this.bindKeyboard = this.bindKeyboard.bind(this)
   }
+
 
   state = {
     isLoading: false,
@@ -44,6 +46,14 @@ class PatientCreate extends Component {
     this.fetchCompanies()
   }
 
+  componentDidMount () {
+    window.addEventListener('keyup', this.bindKeyboard)
+  }
+
+  componentWillUnmount () {
+    window.removeEventListener('keyup', this.bindKeyboard)
+  }
+
   // handlers
 
   handleInputChange (event) {
@@ -58,6 +68,11 @@ class PatientCreate extends Component {
 
   handleCreateClick () {
     this.create(this.state.patient)
+  }
+
+  bindKeyboard (event) {
+    const key = event.keyCode || event.which
+    if (key === 27) this.setState({ isCreated: true })
   }
 
   /**
