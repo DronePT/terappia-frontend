@@ -1,6 +1,6 @@
 import axios from 'axios'
 
-const baseURL = 'http://terappia.andrelabs.com/v1/'
+const baseURL = 'https://terappia.andrelabs.com/v1/'
 
 class APIClient {
   constructor () {
