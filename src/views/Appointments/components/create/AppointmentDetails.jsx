@@ -30,6 +30,7 @@ const AppointmentDetails = ({ data, onUpdate }) => {
     <div className="row">
       <div className="col-xs-12 col-sm-6">
         <TextInput
+          type="number"
           label="preço da consulta"
           name="price"
           value={data.price.toString()}
