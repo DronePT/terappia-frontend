@@ -127,7 +127,11 @@ class CreateAppointment extends Component {
 
   updateForm (field) {
     return value => {
-      this.setState({ form: { ...this.state.form, [field]: value }})
+      let form = { ...this.state.form, [field]: value }
+
+      if (field === 'patient') form.details.price = value.company.amount || 20
+
+      this.setState({ form })
     }
   }
 
