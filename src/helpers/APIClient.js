@@ -1,6 +1,7 @@
 import axios from 'axios'
 
 const baseURL = 'https://terappia.andrelabs.com/v1/'
+// const baseURL = 'http://192.168.1.72:1337/v1/'
 
 class APIClient {
   constructor () {
@@ -28,8 +29,21 @@ class APIClient {
     }
   }
 
+  async __put (uri, payload) {
+    try {
+      const result = await this.http.put(uri, payload)
+      return result.data
+    } catch (error) {
+      console.warn(error)
+    }
+  }
+
   fetchPatients (query = null, page = 1, compact = false, limit = 9) {
     return this.__get(`patients?limit=${limit}&page=${page}${query?`&q=${query}`:''}&compact=${compact}`)
+  }
+
+  fetchAppointment (appointment) {
+    return this.__get(`appointments/${appointment}`)
   }
 
   fetchAppointments (start = '', end = '') {
@@ -42,6 +56,10 @@ class APIClient {
 
   createPatient (payload) {
     return this.__post(`patients`, payload)
+  }
+
+  updateAppointment (appointment, payload) {
+    return this.__put(`appointments/${appointment}`, payload)
   }
 
   createAppointment (payload) {

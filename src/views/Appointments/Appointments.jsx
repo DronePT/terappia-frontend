@@ -3,6 +3,7 @@ import { Switch, Route } from 'react-router-dom'
 
 // components
 import AppointmentsCalendar from './AppointmentsCalendar'
+import Appointment from './Appointment'
 
 const Appointments = () => {
   return (
@@ -11,7 +12,7 @@ const Appointments = () => {
       <Route
         path="/appointments/:appointment"
         exact
-        render={_ => <div>wip</div>} />
+        component={Appointment} />
       <Route component={AppointmentsCalendar} />
     </Switch>
   )
