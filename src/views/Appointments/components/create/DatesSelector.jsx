@@ -6,17 +6,36 @@ import MonthCalendar from './../calendar/MonthCalendar'
 import SelectedDate from './SelectedDate'
 
 class DatesSelector extends Component {
+  state = {
+    updateAll: false
+  }
   handleDayClick (dates) {
     this.props.onDatesChange(dates)
   }
 
+  handleUpdateAll (event) {
+    const { checked: updateAll } = event.target
+    this.setState({ updateAll })
+  }
+
   handleUpdateDate (currentDate) {
     return newDate => {
-      const { dates } = this.props
+      let { dates } = this.props
+      const { updateAll } = this.state
 
       const index = dates.findIndex(d => d === currentDate)
 
-      if (index > -1) dates[index] = newDate
+      if (index <0 ) return
+
+      if (updateAll) {
+        dates = dates.map(date => {
+          date.set({ hour: newDate.hour(), minute: newDate.minutes() })
+          return date
+        })
+
+      } else {
+        dates[index] = newDate
+      }
 
       this.handleDayClick(dates)
     }
@@ -33,6 +52,21 @@ class DatesSelector extends Component {
         />
 
         <div className="month-selected-dates">
+          <div className="options">
+              <div className="squaredFour">
+                <input
+                  type="checkbox"
+                  value="None"
+                  id="squaredFour"
+                  name="check"
+                  checked={this.state.updateAll}
+                  onChange={this.handleUpdateAll.bind(this)} />
+                <label htmlFor="squaredFour"></label>
+              </div>
+
+              <div className="label">Alterar todas as horas ao mesmo tempo</div>
+          </div>
+
           {this.props.dates.map((date, i) => (
             <SelectedDate
               key={i}
