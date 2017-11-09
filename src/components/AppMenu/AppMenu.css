@@ -132,6 +132,11 @@ ul.app-menu > li.active > a, ul.app-menu > li > a:hover {
   ul.app-menu > li > a > span {
     margin-top: 0;
     margin-left: 8px;
+    display: none;
+  }
+
+  ul.app-menu > li.active > a > span {
+    display: block;
   }
 
   .app {
