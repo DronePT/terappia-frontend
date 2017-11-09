@@ -17,6 +17,7 @@
   .month-calendar-container > .month-calendar {
     flex: 0 1;
     width: 296px;
+    margin: auto;
   }
 
   .month-selected-dates {
