@@ -42,6 +42,10 @@ class APIClient {
     return this.__get(`patients?limit=${limit}&page=${page}${query?`&q=${query}`:''}&compact=${compact}`)
   }
 
+  fetchDashboard () {
+    return this.__get(`appointments/dashboard`)
+  }
+
   fetchAppointment (appointment) {
     return this.__get(`appointments/${appointment}`)
   }

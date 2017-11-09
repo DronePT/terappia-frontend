@@ -1,0 +1,43 @@
+.dashboard > h1 {
+  text-transform: capitalize;
+}
+
+.dashboard-card {
+  padding: 4px;
+}
+
+.dashboard-card > .dashboard-content {
+  background-color: #fff;
+  border-radius: 5px;
+  padding: 16px;
+  position: relative;
+
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  overflow: hidden;
+
+  box-shadow: 0 4px 16px -8px rgba(0, 0, 0, .32),
+              0 2px 8px -4px rgba(0, 0, 0, .54);
+}
+
+.dashboard-card > .dashboard-content > .icon {
+  position: absolute;
+  font-size: 8rem;
+  right: -16px;
+  top: 0;
+  color: rgba(21, 116, 255, .1);
+  text-align: right;
+}
+
+.dashboard-card > .dashboard-content > .title {
+  font-size: 1.1rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: rgba(21, 116, 255, .70);
+}
+
+.dashboard-card > .dashboard-content > .data {
+  font-size: 2rem;
+  margin-top: 8px;
+}
