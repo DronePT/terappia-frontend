@@ -33,6 +33,12 @@ class Calendar extends React.Component {
     this.setState({ date })
   }
 
+  handleStatusChange (type) {
+    return id => {
+      this.props.onStatusChange(id, type)
+    }
+  }
+
   handleChangeWeekClick (weekday) {
     const { onDateChange } = this.props
     const { date } = this.state
@@ -56,12 +62,17 @@ class Calendar extends React.Component {
         <WeekDay key={wd} day={wday} appointments={dayAppointments}>
           {dayAppointments.map((a, i) => (
             <WeekAppointment
+              id={a._id}
               to={`/appointments/${a._id}`}
               key={i}
+              price={a.price}
               datetime={moment(a.date).format('HH:mm')}
+              isSuccess={a.status === 'paid'}
               isDanger={a.status === 'notpaid'}
               color={a.patient.company.color}
-              label={(a.patient || { name: 'N/D' }).name} />
+              label={(a.patient || { name: 'N/D' }).name}
+              onPaidClick={this.handleStatusChange('paid')}
+              onNotPaidClick={this.handleStatusChange('notpaid')} />
           ))}
         </WeekDay>
       )

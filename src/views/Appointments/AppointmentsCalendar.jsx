@@ -14,12 +14,6 @@ import Button from './../../components/Button/Button'
 import CreateAppointment from './components/create/CreateAppointment'
 
 class Appointments extends Component {
-  constructor () {
-    super()
-
-    this.handleDateChange = this.handleDateChange.bind(this)
-  }
-
   state = {
     isLoading: false,
     currentDate: moment(),
@@ -34,9 +28,18 @@ class Appointments extends Component {
     this.startFetch()
   }
 
+  handleStatusChange (id, status) {
+    this.updateStatus(id, { status })
+  }
+
   handleDateChange (currentDate) {
     this.setState({ currentDate, isLoading: true })
     this.fetchAppointments(currentDate)
+  }
+
+  async updateStatus(id, payload) {
+    await API.updateAppointment(id, payload)
+    this.startFetch()
   }
 
   startFetch () {
@@ -89,7 +92,8 @@ class Appointments extends Component {
         <Calendar
             isLoading={isLoading}
             date={currentDate}
-            onDateChange={this.handleDateChange}
+            onDateChange={this.handleDateChange.bind(this)}
+            onStatusChange={this.handleStatusChange.bind(this)}
             appointments={appointments}
           />
       </div>

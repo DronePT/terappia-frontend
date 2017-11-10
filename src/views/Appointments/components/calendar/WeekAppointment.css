@@ -1,5 +1,84 @@
 .week-appointment-container {
   position: relative;
+  user-select: none;
+  transition: padding .25s ease;
+}
+
+.week-appointment-container.active {
+  padding-bottom: 24px;
+}
+
+.week-appointment-container > .menu {
+  position: absolute;
+  bottom: 0;
+
+  width: 100%;
+  height: 32px;
+  padding: 0 16px 0 8px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity .25s ease, visibility .25s ease;
+}
+
+.week-appointment-container > .menu > .left {
+  flex: 0 1;
+}
+
+.week-appointment-container > .menu > .right {
+  display: flex;
+}
+
+.week-appointment-container > .menu > .right > a {
+  margin-left: 4px;
+}
+
+.week-appointment-container > .menu > .left > a,
+.week-appointment-container > .menu > .right > .money {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+
+  border: solid 1px rgba(0, 0, 0, .08);
+  border-left-color: rgba(0, 0, 0, .04);
+  border-top-color: rgba(0, 0, 0, .04);
+
+  border-radius: 5px;
+  box-shadow: 0 0 16px -6px rgba(0, 0, 0, .32),
+  0 2px 4px -2px rgba(0, 0, 0, .16);
+}
+
+.week-appointment-container > .menu > .left > a {
+  width: 25px;
+  height: 25px;
+  font-size: 16px;
+}
+
+.week-appointment-container > .menu > .right > .money {
+  height: 25px;
+  padding: 0 8px;
+}
+
+.week-appointment-container > .menu > .right > .money > span.label {
+  margin-right: 8px;
+  color: rgba(129, 129, 129, 0.54);
+}
+
+.week-appointment-container > .menu > .right > .money > span.separator {
+  flex: 0 1 1px;
+  width: 1px;
+  height: calc(100% - 8px);
+  background-color: rgba(0, 0, 0, .16);
+  margin: 0 8px;
+}
+.week-appointment-container.active > .menu {
+  opacity: 1;
+  visibility: visible;
 }
 
 .week-appointment {
@@ -46,8 +125,17 @@
   margin-right: 4px;
 }
 
+.week-appointment > div.header > div.labels > span {
+  margin-right: 8px;
+}
+
 .week-appointment > div.header > span.danger > i {
-  color: hsla(0, 90%, 50%, 1);
+  /* color: hsla(0, 90%, 50%, 1); */
+  color: #f9334b;
+}
+
+.week-appointment > div.header > span.success > i {
+  color: #28c96d;
 }
 
 .week-appointment > span.label {
