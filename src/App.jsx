@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Switch, Route } from 'react-router-dom'
+import { Switch, Route, Redirect } from 'react-router-dom'
 
 import './App.css'
 
@@ -17,6 +17,7 @@ class App extends Component {
         <div className="app-content">
           <Switch>
             { routes.map((r, key) => <Route key={key} {...r} />) }
+            <Redirect exact from='/' to='/dashboard'/>
             <Route render={() => 'not found'} />
           </Switch>
         </div>
