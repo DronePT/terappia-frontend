@@ -1,7 +1,7 @@
 import axios from 'axios'
 
-// const baseURL = 'https://terappia.andrelabs.com/v1/'
-const baseURL = 'http://192.168.1.72:1337/v1/'
+const baseURL = 'https://terappia.andrelabs.com/v1/'
+// const baseURL = 'http://192.168.1.72:1337/v1/'
 
 const handleError = error => {
   if (error.response.status === 401) {
