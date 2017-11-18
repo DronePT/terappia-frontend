@@ -1,13 +1,40 @@
 import axios from 'axios'
 
-const baseURL = 'https://terappia.andrelabs.com/v1/'
-// const baseURL = 'http://192.168.1.72:1337/v1/'
+// const baseURL = 'https://terappia.andrelabs.com/v1/'
+const baseURL = 'http://192.168.1.72:1337/v1/'
+
+const handleError = error => {
+  if (error.response.status === 401) {
+    localStorage.removeItem('token')
+    window.location = '/signin'
+    return
+  }
+
+  console.warn(error)
+}
 
 class APIClient {
   constructor () {
     this.http = axios.create({
       baseURL,
       timeout: 10000
+    })
+
+    this.http.interceptors.request.use(function (config) {
+      if (localStorage.token) {
+        return {
+          ...config,
+          headers: {
+            ...config.headers,
+            Authorization: localStorage.token
+          }
+        }
+      }
+
+      return config
+    }, function (error) {
+      // Do something with request error
+      return Promise.reject(error)
     })
   }
 
@@ -16,7 +43,7 @@ class APIClient {
       const result = await this.http.get(uri)
       return result.data
     } catch (error) {
-      console.warn(error)
+      handleError(error)
     }
   }
 
@@ -25,7 +52,7 @@ class APIClient {
       const result = await this.http.post(uri, payload)
       return result.data
     } catch (error) {
-      console.warn(error)
+      handleError(error)
     }
   }
 
@@ -34,7 +61,20 @@ class APIClient {
       const result = await this.http.put(uri, payload)
       return result.data
     } catch (error) {
-      console.warn(error)
+      handleError(error)
+    }
+  }
+
+  async login (payload) {
+    try {
+      const result = await this.http.post('users/auth', payload)
+      const { token } = result.data.data
+
+      localStorage.setItem('token', token)
+
+      return token
+    } catch (error) {
+      return false
     }
   }
 
