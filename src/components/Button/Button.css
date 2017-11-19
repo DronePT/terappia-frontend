@@ -65,6 +65,26 @@
   background-color: hsl(120, 50%, 40%);
 }
 
+.button.is-danger,
+.button.is-red {
+  background-color: hsl(353, 94%, 59%);
+  color: #fff;
+}
+
+.button.is-danger:hover,
+.button.is-red:hover {
+  background-color: hsl(353, 94%, 49%);
+}
+
+.button.is-gray {
+  background-color: hsl(0, 0%, 50%);
+  color: #fff;
+}
+
+.button.is-gray:hover {
+  background-color: hsl(0, 0%, 40%);
+}
+
 .button:focus {
   outline: none;
 }
