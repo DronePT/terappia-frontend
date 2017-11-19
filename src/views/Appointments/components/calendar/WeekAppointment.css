@@ -5,7 +5,40 @@
 }
 
 .week-appointment-container.active {
-  padding-bottom: 24px;
+  padding: 24px 0;
+}
+
+.week-appointment-container > .cancel-menu {
+  position: absolute;
+  z-index: 0;
+  top: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: .85rem;
+  width: 100%;
+  height: 32px;
+
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity .25s ease, visibility .25s ease;
+
+  color: rgba(248, 52, 75, .5);
+}
+
+.week-appointment-container > .cancel-menu:hover {
+  color: rgba(248, 52, 75, 1);
+}
+
+.week-appointment-container.active > .cancel-menu {
+  opacity: 1;
+  visibility: visible;
+}
+
+.week-appointment-container > .cancel-menu > i {
+  margin-right: 8px;
 }
 
 .week-appointment-container > .menu {
@@ -76,6 +109,7 @@
   background-color: rgba(0, 0, 0, .16);
   margin: 0 8px;
 }
+
 .week-appointment-container.active > .menu {
   opacity: 1;
   visibility: visible;

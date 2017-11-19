@@ -1,7 +1,7 @@
 import axios from 'axios'
 
-const baseURL = 'https://terappia.andrelabs.com/v1/'
-// const baseURL = 'http://192.168.1.72:1337/v1/'
+// const baseURL = 'https://terappia.andrelabs.com/v1/'
+const baseURL = 'http://192.168.1.72:1337/v1/'
 
 const handleError = error => {
   if (error.response.status === 401) {
@@ -41,6 +41,15 @@ class APIClient {
   async __get (uri) {
     try {
       const result = await this.http.get(uri)
+      return result.data
+    } catch (error) {
+      handleError(error)
+    }
+  }
+
+  async __delete (uri) {
+    try {
+      const result = await this.http.delete(uri)
       return result.data
     } catch (error) {
       handleError(error)
@@ -108,6 +117,10 @@ class APIClient {
 
   createAppointment (payload) {
     return this.__post(`appointments`, payload)
+  }
+
+  cancelAppointment (appointment) {
+    return this.__delete(`appointments/${appointment}`)
   }
 }
 

@@ -1,0 +1,14 @@
+.ca--footer {
+  margin: 32px -32px -32px;
+  padding: 16px 32px;
+  background-color: #f1f2f3;
+
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+
+  display: flex;
+}
+
+.ca--footer > * {
+  margin-right: 8px;
+}

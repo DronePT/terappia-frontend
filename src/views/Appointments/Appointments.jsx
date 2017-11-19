@@ -8,6 +8,7 @@ import Appointment from './Appointment'
 const Appointments = () => {
   return (
     <Switch>
+      <Route path="/appointments/cancel/:appointment" exact component={AppointmentsCalendar} />
       <Route path="/appointments/add" exact component={AppointmentsCalendar} />
       <Route
         path="/appointments/:appointment"

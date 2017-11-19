@@ -12,6 +12,7 @@ import API from './../../helpers/APIClient'
 import Calendar from './components/calendar/Calendar'
 import Button from './../../components/Button/Button'
 import CreateAppointment from './components/create/CreateAppointment'
+import CancelAppointment from './components/cancel/CancelAppointment'
 
 class Appointments extends Component {
   state = {
@@ -75,6 +76,11 @@ class Appointments extends Component {
           path="/appointments/add"
           exact
           component={CreateAppointment} />
+
+        <Route
+          path="/appointments/cancel/:appointment"
+          exact
+          component={CancelAppointment} />
 
         <div className="appointments-header">
           <div className="row">

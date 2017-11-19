@@ -6,6 +6,7 @@ import './WeekAppointment.css'
 
 import { hexToRgb } from './../../../../helpers/colors'
 
+import WeekAppointmentMenu from './WeekAppointmentMenu'
 
 class WeekAppointment extends Component {
   state = {
@@ -50,6 +51,10 @@ class WeekAppointment extends Component {
 
     return (
       <div className={`week-appointment-container ${active?'active':''}`}>
+
+        <Link to={`/appointments/cancel/${id}`} className="cancel-menu">
+          <i className="fa fa-trash-o"></i> cancelar marcação
+        </Link>
         <div
           onClick={e => { this.setState({ active: !active }) }}
           className="week-appointment"
@@ -71,36 +76,14 @@ class WeekAppointment extends Component {
           </div>
           <span className="label">{label}</span>
         </div>
-        <div className="menu">
-          <div className="left">
-            <Link
-                onDragStart={e => e.preventDefault()}
-                to={to}>
-                <i className="fa fa-search"></i>
-              </Link>
-          </div>
-          <div className="right">
-            <div className="money">
-              <span className="label">
-                <i className="fa fa-money"></i>
-              </span>
 
-              <a
-                href="#paid"
-                onClick={e => { e.preventDefault(); onPaidClick(id) }}
-                style={{color: '#28c96d', opacity: paidOpacity }}>
-                <i className="fa fa-check"></i>
-              </a>
-              <span className="separator"></span>
-              <a
-                href="#notpiad"
-                onClick={e => { e.preventDefault(); onNotPaidClick(id) }}
-                style={{color: '#f9334b', opacity: notPaidOpacity }}>
-                <i className="fa fa-times"></i>
-              </a>
-            </div>
-          </div>
-        </div>
+        <WeekAppointmentMenu
+          id={id}
+          paidOpacity={paidOpacity}
+          onPaidClick={onPaidClick}
+          notPaidOpacity={notPaidOpacity}
+          onNotPaidClick={onNotPaidClick}
+          to={to} />
       </div>
     )
   }
