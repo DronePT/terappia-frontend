@@ -89,7 +89,7 @@ ul.app-menu > li.active > a, ul.app-menu > li > a:hover {
 
 @media only screen and (max-width: 48em) {
   .app-menu-container {
-    height: 50px;
+    height: 56px;
     width: 100%;
     box-shadow: 0 4px 32px -16px rgba(0, 0, 0, .12);
 
@@ -101,7 +101,7 @@ ul.app-menu > li.active > a, ul.app-menu > li > a:hover {
   .app-menu-container > div.logo-container {
     padding: 0 16px;
     margin-bottom: 0;
-    height: 50px;
+    height: 56px;
 
     display: flex;
     align-items: center;
