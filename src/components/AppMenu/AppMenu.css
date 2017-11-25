@@ -81,6 +81,12 @@ ul.app-menu > li.active > a, ul.app-menu > li > a:hover {
 }
 
 
+@media only screen and (max-width: 350px) {
+  .app-menu-container > div.logo-container > div.logo-alt {
+    display: none;
+  }
+}
+
 @media only screen and (max-width: 48em) {
   .app-menu-container {
     height: 50px;

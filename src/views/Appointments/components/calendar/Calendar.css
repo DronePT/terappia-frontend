@@ -8,19 +8,31 @@
 
   position: relative;
 
-  padding: 0 48px;
+  /* padding: 0 48px; */
+  padding: 48px 0 0;
+  overflow: hidden;
 }
 
 .calendar > .calendar-header {
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  width: 100%;
+  height: 48px;
+
   display: flex;
   align-items: center;
   justify-content: center;
-  flex: 0 1 50px;
+  flex: 0 1 48px;
 
   font-size: 1.5rem;
   text-transform: capitalize;
 
+  background-color: #fff;
+
   border-bottom: solid 1px #f2f4f5;
+
+  box-shadow: 4px 0 16px -4px rgba(0, 0, 0, .16);
 }
 
 .calendar.week-mode > .calendar-body {
@@ -36,8 +48,12 @@
 
 .week-mode > .change-week {
   position: absolute;
+  z-index: 2;
+
+  top: 0;
   width: 48px;
-  height: 100%;
+  /* height: 100%; */
+  height: 48px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -95,4 +111,15 @@
 
 .calendar-body--loading > span {
   margin-top: 24px;
+}
+
+@media only screen and (max-width: 48em) {
+  .calendar {
+    padding: 48px 0 0 0;
+  }
+
+  .week-mode > .change-week {
+    width: 48px;
+    height: 48px;
+  }
 }

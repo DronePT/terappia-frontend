@@ -49,7 +49,7 @@
 /* sate over */
 .calendar-week-day.is-today,
 .calendar-week-day:hover {
-  background-color: rgba(171, 188, 193, .04);
+  background-color: rgba(171, 188, 193, .08);
 }
 
 .calendar-week-day:hover .calendar-header-col > span.day-name,
