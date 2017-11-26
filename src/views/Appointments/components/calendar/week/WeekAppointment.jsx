@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 
 import './WeekAppointment.css'
 
-import { hexToRgb } from './../../../../helpers/colors'
+import { hexToRgb } from './../../../../../helpers/colors'
 
 import WeekAppointmentMenu from './WeekAppointmentMenu'
 

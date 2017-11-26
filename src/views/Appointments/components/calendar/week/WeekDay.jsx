@@ -4,7 +4,7 @@ import 'moment/locale/pt'
 
 import './WeekDay.css'
 
-const WeekDay = ({ day = moment(), children }) => {
+const WeekDay = ({ showHeader = true, day = moment(), children }) => {
   if (typeof day === 'string') day = moment(day)
 
   const diff = moment().diff(day, 'days', true)
@@ -14,12 +14,14 @@ const WeekDay = ({ day = moment(), children }) => {
 
   return (
     <div className={classname}>
+      {showHeader ?
       <div className="calendar-week-day-header">
         <div className="calendar-header-col">
           <span className="day-name">{day.format('dddd')}</span>
           <span className="date">{day.format('DD MMM')}</span>
         </div>
       </div>
+       : null}
 
       <div className="calendar-week-day-body">
         {children}

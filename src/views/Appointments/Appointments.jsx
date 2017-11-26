@@ -10,10 +10,7 @@ const Appointments = () => {
     <Switch>
       <Route path="/appointments/cancel/:appointment" exact component={AppointmentsCalendar} />
       <Route path="/appointments/add" exact component={AppointmentsCalendar} />
-      <Route
-        path="/appointments/:appointment"
-        exact
-        component={Appointment} />
+      <Route path="/appointments/:appointment" exact component={Appointment} />
       <Route component={AppointmentsCalendar} />
     </Switch>
   )
