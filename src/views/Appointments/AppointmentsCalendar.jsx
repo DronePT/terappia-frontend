@@ -40,9 +40,7 @@ class Appointments extends Component {
     this.fetchAppointments(date, this.state.mode)
   }
 
-  handleModeChange (event) {
-    const { value: mode } = event.target
-
+  handleModeChange (mode) {
     this.setState({ mode }, this.fetchFromStateDate)
   }
 
@@ -113,25 +111,31 @@ class Appointments extends Component {
           component={CancelAppointment} />
 
         <div className="appointments-header">
-          <div className="row">
-            <div className="col-xs-12  col-md-9">
-              <label htmlFor="mode-week">
-                <input
-                  type="radio" name="mode" id="mode-week" value="week"
-                  onChange={this.handleModeChange.bind(this)}
-                  checked={mode === 'week'} />
-                semanal
-              </label>
-
-              <label htmlFor="mode-day">
-                <input type="radio" name="mode" id="mode-day" value="day"
-                onChange={this.handleModeChange.bind(this)}
-                checked={mode === 'day'} />
-                diário
-              </label>
+          <div className="row middle-xs">
+            <div className="col-xs-12 col-md-4 margin-xs">
+              <div className="row">
+                <div className="col-xs-6">
+                  <Button
+                    style={{width: '100%'}}
+                    onClick={e => this.handleModeChange('day') }
+                    size="large"
+                    color={mode === 'day' ? 'green' : 'primary'}
+                    icon={mode === 'day' ? 'check-circle-o' : 'circle-o'}
+                  >Diário</Button>
+                </div>
+                <div className="col-xs-6">
+                  <Button
+                    style={{width: '100%'}}
+                    onClick={e => this.handleModeChange('week') }
+                    size="large"
+                    color={mode === 'week' ? 'green' : 'primary'}
+                    icon={mode === 'week' ? 'check-circle-o' : 'circle-o'}
+                  >Semanal</Button>
+                </div>
+              </div>
             </div>
 
-            <div className="col-xs-12  col-md-3">
+            <div className="col-xs-12 col-md-offset-5 col-md-3">
               <Button
                 to="/appointments/add"
                 size="large"
